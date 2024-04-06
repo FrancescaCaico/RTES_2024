@@ -22,7 +22,7 @@ soluzione ad eventuali problemi di starvation.
 #include <time.h>
 int nanosleep(const struct timespec *req, struct timespec *rem);
 
-// si ragiona a stati
+// si ragiona a stati e con 3 MUTEX --> ci sono 3 classi 1) A e C   2) E e D 3) B
 
 #define NESSUNO 1
 #define STATO_A 2
@@ -40,8 +40,8 @@ struct gestore_t
 {
   sem_t mutex_seq; // per proteggere le sezioni critiche
 
-  sem_t sa, sb, sc, sd, se; // per accedere ad una procedura  --> DICE ANCHE QUANTI BLOCCATI
-  int ca, cb, cc, cd, ce;   // mantengo il numero di task bloccati
+  sem_t sac, sb, sde; // per accedere ad una procedura  --> DICE ANCHE QUANTI BLOCCATI
+  int cac, cb, cde;   // mantengo il numero di task bloccati
 
   int nb;    // dato che più b possono accedere dobbiamo tenerne conto di quanti sono in esecuzione.
   int stato; // controlliamo lo stato a seconda dei vari interleaving e di chi prende cosa.
@@ -55,17 +55,12 @@ void inizializzaGestore(struct gestore_t *g)
 
   // inizializzo i mutex di sync e i relativi contatori
 
-  sem_init(&g->sa, 0, 0);
-  g->ca = 0;
+  g->cac = 0;
   sem_init(&g->sb, 0, 0);
   g->cb = 0;
-  sem_init(&g->sc, 0, 0);
-  g->cc = 0;
-  sem_init(&g->sd, 0, 0);
-  g->cd = 0;
-  sem_init(&g->se, 0, 0);
-  g->ce = 0;
-
+  sem_init(&g->sac, 0, 0);
+  g->cde = 0;
+  sem_init(&g->sde, 0, 0);
   g->nb = 0;
   g->stato = NESSUNO;
 }
@@ -73,25 +68,25 @@ void inizializzaGestore(struct gestore_t *g)
 void sveglioAorC(struct gestore_t *g)
 {
 
-  if (g->ca)
+   g->stato=NESSUNO;
+  if (g->cac)
   {
-    // sveglio un A
-    g->ca--;
-    g->stato = STATO_A;
-    sem_post(&g->sa);
+    sem_post(&g->sac);    
+    g->cac--;
   }
-  else if (g->cc)
+}
+
+void sveglioDorE(struct gestore_t *g)
+{
+
+   g->stato = STATO_E_D;
+  if (g->cde)
   {
-    // sveglio un C
-    g->cc--;
-    g->stato = STATO_C;
-    sem_post(&g->sc);
+    // sveglio un A o C che sono gli inizi delle due sequenze e che quindi vanno in stato nessuno
+    g->cde--;
+    sem_post(&g->sde);
   }
-  else
-  {
-    // non sveglio nessuno e cambio lo stato
-    g->stato = NESSUNO;
-  }
+  
 }
 
 // inzio le procedure di prologo ed epilogo partendo dalla prima sequenza.
@@ -111,14 +106,14 @@ void startA(struct gestore_t *g)
     g->stato = STATO_A;
 
     // eseguo preventivamente la post
-    sem_post(&g->sa);
+    sem_post(&g->sac);
   }
   else
   {
-    g->ca++;
+    g->cac++;
   }
   sem_post(&g->mutex_seq);
-  sem_wait(&g->sa);
+  sem_wait(&g->sac);
 }
 
 // CHI DEVO SVEGLIARE?
@@ -177,7 +172,6 @@ void endB(struct gestore_t *g)
     // devo svegliare o A o C
     sveglioAorC(g);
   }
-
   sem_post(&g->mutex_seq);
 }
 
@@ -194,14 +188,14 @@ void startC(struct gestore_t *g)
     g->stato = STATO_C;
 
     // eseguo preventivamente la post
-    sem_post(&g->sc);
+    sem_post(&g->sac);
   }
   else
   {
-    g->cc++;
+    g->cac++;
   }
   sem_post(&g->mutex_seq);
-  sem_wait(&g->sc);
+  sem_wait(&g->sac);
 }
 
 void endC(struct gestore_t *g)
@@ -211,27 +205,7 @@ void endC(struct gestore_t *g)
 
   sem_wait(&g->mutex_seq);
 
-  // devo svegliare o E o D
-  if (g->cd)
-  {
-    /*sveglio un D e migro nello stato D*/
-    g->cd--;
-    g->stato = STATO_D;
-    sem_post(&g->sd);
-  }
-  else if (g->ce)
-  {
-    /*sveglio un E e migro nello stato E*/
-    g->ce--;
-    g->stato = STATO_E;
-    sem_post(&g->se);
-  }
-  else
-  {
-    /* migro nel mio stato E _ D dato che esclusivamente uno dei due deve partire. */
-    g->stato = STATO_E_D;
-  }
-
+    sveglioDorE(g);
   sem_post(&g->mutex_seq);
 }
 
@@ -247,14 +221,14 @@ void startD(struct gestore_t *g)
   {
     g->stato = STATO_D;
     // eseguo preventivamente la post
-    sem_post(&g->sd);
+    sem_post(&g->sde);
   }
   else
   {
-    g->cd++;
+    g->cde++;
   }
   sem_post(&g->mutex_seq);
-  sem_wait(&g->sd);
+  sem_wait(&g->sde);
 }
 
 void endD(struct gestore_t *g)
@@ -265,7 +239,6 @@ void endD(struct gestore_t *g)
   sem_wait(&g->mutex_seq);
 
   sveglioAorC(g);
-
   sem_post(&g->mutex_seq);
 }
 
@@ -281,14 +254,14 @@ void startE(struct gestore_t *g)
   {
     g->stato = STATO_E;
     // eseguo preventivamente la post
-    sem_post(&g->se);
+    sem_post(&g->sde);
   }
   else
   {
-    g->ce++;
+    g->cde++;
   }
   sem_post(&g->mutex_seq);
-  sem_wait(&g->se);
+  sem_wait(&g->sde);
 }
 
 void endE(struct gestore_t *g)
