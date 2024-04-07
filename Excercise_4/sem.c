@@ -131,47 +131,29 @@ void checkVincita(struct partita_t *partita)
 
 void InizioPartita(struct partita_t *partita)
 {
-    printf("Chiamo player1");
+    // printf("Chiamo player1");
     sem_post(&partita->player1);
-    giocaPlayer1(partita);
-    printf("Chiamo player2");
+    // printf("Chiamo player2");
     sem_post(&partita->player2);
-    giocaPlayer2(partita);
-}
-
-void attendiGiocata(struct partita_t *partita)
-{
-    if (partita->giocate[0] == -1 || partita->giocate[1] == -1)
-    {
-        // mi blocco
-        sem_wait(&partita->arbitro);
-    }
 }
 
 void arbitra(struct partita_t *partita)
 {
-    // Inizio la partita se l'utente preme un tasto.
-    sem_wait(&partita->mutex);
-    // 1. "dare il via" ai due thread giocatori;
-    InizioPartita(partita);
-    // 2. aspettare che ciascuno di essi faccia la propria mossa;
-    attendiGiocata(partita);
-    checkVincita(partita);
-    partita->giocate[0] = -1;
-    partita->giocate[1] = -1;
-
-    while (getchar())
+    while (1)
     {
 
         // 1. "dare il via" ai due thread giocatori;
         InizioPartita(partita);
         // 2. aspettare che ciascuno di essi faccia la propria mossa;
-        attendiGiocata(partita);
+        // attendiGiocata(partita);
+        sem_wait(&partita->arbitro);
         checkVincita(partita);
-        partita->giocate[0] = -1;
-        partita->giocate[1] = -1;
+        partita->giocate[0] = DA_LANCIARE;
+        partita->giocate[1] = DA_LANCIARE;
+        printf("Premi il tasto invio per iniziare la prossima partita...\n");
+        getchar();
     }
-    sem_post(&partita->mutex);
+    sem_wait(&partita->mutex);
 }
 
 void *Player1(void *arg)
@@ -181,7 +163,6 @@ void *Player1(void *arg)
     {
 
         giocaPlayer1(&partita);
-        pausetta();
     }
 }
 
@@ -192,7 +173,6 @@ void *Player2(void *arg)
     {
 
         giocaPlayer2(&partita);
-        pausetta();
     }
 }
 
@@ -202,7 +182,6 @@ void *Arbitro(void *arg)
     for (;;)
     {
         arbitra(&partita);
-        pausetta();
     }
 }
 
@@ -228,7 +207,7 @@ int main(int argc, char **argv)
 
     pthread_attr_destroy(&a);
 
-    sleep(100000);
+    sleep(5);
 
     return 0;
 }
