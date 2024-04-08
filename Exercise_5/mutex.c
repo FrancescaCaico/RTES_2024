@@ -47,7 +47,7 @@ struct urna_t
     pthread_cond_t turno;
     pthread_cond_t scrutinio;
 
-    int blocked, votanti, voti0, voti1, vittoria;
+    int votanti, voti0, voti1, vittoria;
 } urna;
 
 void initUrna(struct urna_t *urna)
@@ -65,7 +65,6 @@ void initUrna(struct urna_t *urna)
     pthread_mutexattr_destroy(&mutex_attr);
     pthread_condattr_destroy(&cond_attr);
 
-    urna->blocked = 0;
     urna->votanti = 0;
     urna->voti0 = 0;
     urna->voti1 = 0;
@@ -127,9 +126,7 @@ void vota(int v)
 
     while (urna.votanti)
     {
-        urna.blocked++;
         pthread_cond_wait(&urna.turno, &urna.mutex);
-        urna.blocked--;
     }
 
     // posso votare.
