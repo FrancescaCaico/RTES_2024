@@ -80,34 +80,28 @@ int scelta_mossa()
     return rand() % 3;
 }
 
-void checkFinePartita(struct partita_t *partita)
-{
-    if (partita->giocate[0] != -1 && partita->giocate[1] != -1)
-    {
-        sem_post(&partita->arbitro);
-    }
-}
-
 void giocaPlayer1(struct partita_t *partita)
 {
-
-    sem_wait(&partita->player1);
+    pthread_mutex_lock(&partita->mutex);
+    pthread_cond_wait(&partita->player1, &partita->mutex);
     // sceglie una mossa.
     int mossa = scelta_mossa();
     printf("Player1 sceglie %s\n", nomi_mosse[mossa]);
     partita->giocate[0] = mossa;
-    checkFinePartita(partita);
+    pthread_cond_signal(&partita->arbitro);
+    pthread_mutex_unlock(&partita->mutex);
 }
 
 void giocaPlayer2(struct partita_t *partita)
 {
-
-    sem_wait(&partita->player2);
+    pthread_mutex_lock(&partita->mutex);
+    pthread_cond_wait(&partita->player2, &partita->mutex);
     // sceglie una mossa.
     int mossa = scelta_mossa();
     printf("Player2 sceglie %s\n", nomi_mosse[mossa]);
     partita->giocate[1] = mossa;
-    checkFinePartita(partita);
+    pthread_cond_signal(&partita->arbitro);
+    pthread_mutex_unlock(&partita->mutex);
 }
 
 void checkVincita(struct partita_t *partita)
@@ -142,28 +136,39 @@ void checkVincita(struct partita_t *partita)
 void InizioPartita(struct partita_t *partita)
 {
     // printf("Chiamo player1");
-    sem_post(&partita->player1);
+    pthread_cond_signal(&partita->player1);
     // printf("Chiamo player2");
-    sem_post(&partita->player2);
+    pthread_cond_signal(&partita->player2);
 }
 
 void arbitra(struct partita_t *partita)
 {
+    // l'arbitro deve prendere il mutex.
+
+    // l'arbitro si blocca solo mentre i due giocatori giocano.
     while (1)
     {
-
-        // 1. "dare il via" ai due thread giocatori;
+        // inizia la partita.
         InizioPartita(partita);
-        // 2. aspettare che ciascuno di essi faccia la propria mossa;
-        // attendiGiocata(partita);
-        sem_wait(&partita->arbitro);
+        pthread_mutex_lock(&partita->mutex);
+        // si blocca, finchè i due giocatori non lo svegliano. La condizione di blocco è questa:
+        while (partita->giocate[0] == DA_LANCIARE || partita->giocate[1] == DA_LANCIARE)
+        {
+            pthread_cond_wait(&partita->arbitro, &partita->mutex);
+        }
+
+        // se si arriva qui: è finita la partita. --> faccio il checkVincita in quanto arbitro.
         checkVincita(partita);
+
+        // resetto per un'eventuale nuova partita.
         partita->giocate[0] = DA_LANCIARE;
         partita->giocate[1] = DA_LANCIARE;
-        printf("Premi il tasto invio per iniziare la prossima partita...\n");
-        getchar();
+
+        // attendo l'invio da tastiera
+        // printf("Premi INVIO per una nuova partita\n");
+        // char c = getchar();
+        pthread_mutex_unlock(&partita->mutex);
     }
-    sem_wait(&partita->mutex);
 }
 
 void *Player1(void *arg)
