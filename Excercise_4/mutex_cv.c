@@ -48,18 +48,28 @@ void pausetta(void)
 
 struct partita_t
 {
-    sem_t mutex;
-    sem_t player1, player2, arbitro;
+    pthread_mutex_t mutex;
+    pthread_cond_t player1, player2, arbitro;
     int giocate[2];
 
 } partita;
 
 void initPartita(struct partita_t *partita)
 {
-    sem_init(&partita->mutex, 0, 1);
-    sem_init(&partita->player1, 0, 0);
-    sem_init(&partita->player2, 0, 0);
-    sem_init(&partita->arbitro, 0, 0);
+
+    pthread_mutexattr_t mutex_attr;
+    pthread_condattr_t cond_attr;
+
+    pthread_mutexattr_init(&mutex_attr);
+    pthread_condattr_init(&cond_attr);
+
+    pthread_mutex_init(&partita->mutex, &mutex_attr);
+    pthread_cond_init(&partita->player1, &cond_attr);
+    pthread_cond_init(&partita->player2, &cond_attr);
+    pthread_cond_init(&partita->arbitro, &cond_attr);
+
+    pthread_mutexattr_destroy(&mutex_attr);
+    pthread_condattr_destroy(&cond_attr);
 
     partita->giocate[0] = DA_LANCIARE;
     partita->giocate[1] = DA_LANCIARE;
@@ -139,7 +149,6 @@ void InizioPartita(struct partita_t *partita)
 
 void arbitra(struct partita_t *partita)
 {
-    sem_wait(&partita->mutex);
     while (1)
     {
 
@@ -154,7 +163,7 @@ void arbitra(struct partita_t *partita)
         printf("Premi il tasto invio per iniziare la prossima partita...\n");
         getchar();
     }
-    sem_post(&partita->mutex);
+    sem_wait(&partita->mutex);
 }
 
 void *Player1(void *arg)
