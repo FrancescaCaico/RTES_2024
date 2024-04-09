@@ -108,12 +108,20 @@ void EndReset(struct gestore_t *g)
 
     g->active_r--;
 
-    while (g->blocked_ab)
+    if (g->blocked_r)
     {
-        sem_post(&g->ab);
-        /* code */
-        g->blocked_ab--;
-        g->active_ab++;
+        sem_post(&g->r);
+    }
+    else
+    {
+
+        while (g->blocked_ab)
+        {
+            sem_post(&g->ab);
+            /* code */
+            g->blocked_ab--;
+            g->active_ab++;
+        }
     }
 
     sem_post(&g->mutex);
