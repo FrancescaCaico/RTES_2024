@@ -57,14 +57,13 @@ int last;
 
 int nanosleep(const struct timespec *req, struct timespec *rem);
 
-void pausetta(void)
+void pausetta(int quanto)
 {
     struct timespec t;
     t.tv_sec = 0;
-    t.tv_nsec = (rand() % 10 + 1) * 1000000;
+    t.tv_nsec = (rand() % 100 + 1) * 1000000 + quanto;
     nanosleep(&t, NULL);
 }
-
 struct corsa_t
 {
     sem_t corsetta;
@@ -105,7 +104,6 @@ void corridore_attendivia(struct corsa_t *corsa, int numerocorridore)
         sem_post(&corsa->arbitro);
     }
     sem_post(&corsa->corsetta);
-    printf("Corridore %d> Attendo il via\n", numerocorridore);
     sem_wait(&corsa->corridori);
     printf("Corridore %d> Ricevuto il via\n", numerocorridore);
 }
@@ -171,22 +169,30 @@ void arbitro_risultato(struct corsa_t *corsa, int *primo, int *ultimo)
     corsa->corr_arrivati = 0;
 
     sem_post(&corsa->corsetta);
+    printf("Primo della gara --> Giocatore %d!\nUltimo della gara --> Giocatore %d\n", first, last);
 }
 
 void *corridore(void *arg)
 {
     int numerocorridore = (intptr_t)arg;
+    pausetta(100000);
     corridore_attendivia(&corsa, numerocorridore); // bloccante
-    corridore_arrivo(&corsa, numerocorridore);     // non bloccante
+    pausetta(100000);
+    corridore_arrivo(&corsa, numerocorridore); // non bloccante
     return NULL;
 }
 void *arbitro(void *arg)
 {
-    arbitro_attendicorridori(&corsa);         // bloccante
-    arbitro_via(&corsa);                      // non bloccante
+    pausetta(100000);
+    arbitro_attendicorridori(&corsa); // bloccante
+    pausetta(100000);
+
+    arbitro_via(&corsa); // non bloccante
+    pausetta(100000);
+
     arbitro_risultato(&corsa, &first, &last); // bloccante
-    printf("GARA TERMINATA...\n");
-    printf("Primo della gara --> Giocatore %d!\nUltimo della gara --> Giocatore %d\n", first, last);
+    printf("****** FINE GARA ******\n");
+
     return NULL;
 }
 
