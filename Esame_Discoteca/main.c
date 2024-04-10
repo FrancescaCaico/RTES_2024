@@ -9,6 +9,11 @@
 #include <stdint.h>
 #include <semaphore.h>
 #include <time.h>
+/*Una discoteca ha la seguente organizzazione per far entrare i clienti nella sala da ballo esiste una cassiera che eminent VOLTA. Emissione del biglietto e riscossione partono assieme, ma alla fine sono non bloccanti.
+
+per evitare confusione alla cassa esiste una porta che fa attendere i clienti fuori dalla discoteca La porta all'inizio del sistema è aperta. All'arrivo del primo cliente la porta si chiude dietro di lui. Quando l'ULTIMO cliente in coda alla cassa ha ritirato il biglietto (ovvero alla fine di cliente_esco_coda), se ci sono dei clienti in attesa fuori, si apre la porta, si fanno entrare (a vostra scelta se farli entrare tutti o solo parte di essi), dopo di che la porta si richiude di nuovo. Se non ci sono clienti in attesa fuori la porta viene aperta.
+
+Il sistema è modellato tramite un thread per la cassiera, ed uno per ogni cliente. Il numero di clienti non è specificato. Non è importante l'ordine di accodamento dei clienti.*/
 
 struct discoteca_t
 {
