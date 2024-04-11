@@ -1,0 +1,182 @@
+Cassiera > Sono in attesa di un cliente.
+Il cliente 133720159794752 arriva fuori dalla discoteca
+Il cliente 133720184972864 arriva fuori dalla discoteca
+Arrivato fuori dalla discoteca ci sono 0 in attesa fuori e dentro ce ne sono 0
+Il cliente 133720184972864 > Posso entrare dentro (non c'è nessuno)
+Il cliente 133720184972864 arriva dentro la discoteca
+Il cliente 133720184972864 > In cassa non c'è nessuno, vado dalla cassiera
+Il cliente 133720184972864 ha pagato il biglietto
+Il cliente 133720184972864 > Esco dalla disco
+Il cliente 133720184972864 > Me ne vado a ballare
+Il cliente 133720168187456 arriva fuori dalla discoteca
+Cassiera > Biglietto emesso e pagato, cliente servito.
+Il cliente 133720176580160 arriva fuori dalla discoteca
+Arrivato fuori dalla discoteca ci sono 0 in attesa fuori e dentro ce ne sono 0
+Il cliente 133720176580160 > Posso entrare dentro (non c'è nessuno)
+Il cliente 133720176580160 arriva dentro la discoteca
+Il cliente 133720176580160 > In cassa non c'è nessuno, vado dalla cassiera
+Il cliente 133720176580160 ha pagato il biglietto
+Il cliente 133720176580160 > Esco dalla disco
+Il cliente 133720176580160 > Me ne vado a ballare
+Il cliente 133720025577024 arriva fuori dalla discoteca
+Arrivato fuori dalla discoteca ci sono 0 in attesa fuori e dentro ce ne sono 0
+Il cliente 133720168187456 > Posso entrare dentro (non c'è nessuno)
+Il cliente 133720168187456 arriva dentro la discoteca
+Arrivato fuori dalla discoteca ci sono 0 in attesa fuori e dentro ce ne sono 1
+Il cliente 133720025577024 > Posso entrare dentro (non c'è nessuno)
+Il cliente 133720151402048 arriva fuori dalla discoteca
+Arrivato fuori dalla discoteca ci sono 0 in attesa fuori e dentro ce ne sono 2
+Il cliente 133720151402048 > Posso entrare dentro (non c'è nessuno)
+Il cliente 133720151402048 arriva dentro la discoteca
+Il cliente 133720151402048 > In cassa non c'è nessuno, vado dalla cassiera
+Il cliente 133720151402048 ha pagato il biglietto
+Il cliente 133720151402048 > Esco dalla disco
+Il cliente 133720151402048 > Me ne vado a ballare
+Il cliente 133720025577024 arriva dentro la discoteca
+Il cliente 133720025577024 > In cassa non c'è nessuno, vado dalla cassiera
+Il cliente 133720025577024 ha pagato il biglietto
+Il cliente 133720025577024 > Esco dalla disco
+Il cliente 133720025577024 > Me ne vado a ballare
+Il cliente 133720168187456 > In cassa non c'è nessuno, vado dalla cassiera
+Il cliente 133720168187456 ha pagato il biglietto
+Il cliente 133720168187456 > Esco dalla disco
+Il cliente 133720168187456 > Me ne vado a ballare
+Arrivato fuori dalla discoteca ci sono 0 in attesa fuori e dentro ce ne sono 0
+Il cliente 133720159794752 > Posso entrare dentro (non c'è nessuno)
+Il cliente 133720159794752 arriva dentro la discoteca
+Il cliente 133720159794752 > In cassa non c'è nessuno, vado dalla cassiera
+Il cliente 133720159794752 ha pagato il biglietto
+Il cliente 133720159794752 > Esco dalla disco
+Il cliente 133720159794752 > Me ne vado a ballare
+Il cliente 133720168187456 arriva fuori dalla discoteca
+Arrivato fuori dalla discoteca ci sono 0 in attesa fuori e dentro ce ne sono 0
+Il cliente 133720168187456 > Posso entrare dentro (non c'è nessuno)
+Il cliente 133720168187456 arriva dentro la discoteca
+Il cliente 133720168187456 > In cassa non c'è nessuno, vado dalla cassiera
+Il cliente 133720168187456 ha pagato il biglietto
+Il cliente 133720168187456 > Esco dalla disco
+Il cliente 133720168187456 > Me ne vado a ballare
+Il cliente 133720025577024 arriva fuori dalla discoteca
+Arrivato fuori dalla discoteca ci sono 0 in attesa fuori e dentro ce ne sono 0
+Il cliente 133720025577024 > Posso entrare dentro (non c'è nessuno)
+Il cliente 133720025577024 arriva dentro la discoteca
+Il cliente 133720025577024 > In cassa non c'è nessuno, vado dalla cassiera
+Il cliente 133720025577024 ha pagato il biglietto
+Il cliente 133720025577024 > Esco dalla disco
+Il cliente 133720025577024 > Me ne vado a ballare
+Il cliente 133720143009344 arriva fuori dalla discoteca
+Arrivato fuori dalla discoteca ci sono 0 in attesa fuori e dentro ce ne sono 0
+Il cliente 133720143009344 > Posso entrare dentro (non c'è nessuno)
+Il cliente 133720143009344 arriva dentro la discoteca
+Il cliente 133720143009344 > In cassa non c'è nessuno, vado dalla cassiera
+Il cliente 133720143009344 ha pagato il biglietto
+Il cliente 133720143009344 > Esco dalla disco
+Il cliente 133720143009344 > Me ne vado a ballare
+Il cliente 133720159794752 arriva fuori dalla discoteca
+Arrivato fuori dalla discoteca ci sono 0 in attesa fuori e dentro ce ne sono 0
+Il cliente 133720159794752 > Posso entrare dentro (non c'è nessuno)
+Il cliente 133720159794752 arriva dentro la discoteca
+Il cliente 133720159794752 > In cassa non c'è nessuno, vado dalla cassiera
+Il cliente 133720159794752 ha pagato il biglietto
+Il cliente 133720159794752 > Esco dalla disco
+Il cliente 133720159794752 > Me ne vado a ballare
+Il cliente 133720168187456 arriva fuori dalla discoteca
+Il cliente 133720184972864 arriva fuori dalla discoteca
+Arrivato fuori dalla discoteca ci sono 0 in attesa fuori e dentro ce ne sono 0
+Il cliente 133720184972864 > Posso entrare dentro (non c'è nessuno)
+Il cliente 133720184972864 arriva dentro la discoteca
+Il cliente 133720184972864 > In cassa non c'è nessuno, vado dalla cassiera
+Arrivato fuori dalla discoteca ci sono 0 in attesa fuori e dentro ce ne sono 1
+Il cliente 133720184972864 ha pagato il biglietto
+Il cliente 133720168187456 > Posso entrare dentro (non c'è nessuno)
+Il cliente 133720168187456 arriva dentro la discoteca
+Il cliente 133720168187456 > In cassa non c'è nessuno, vado dalla cassiera
+Il cliente 133720168187456 ha pagato il biglietto
+Il cliente 133720168187456 > Esco dalla disco
+Il cliente 133720168187456 > Me ne vado a ballare
+Il cliente 133720025577024 arriva fuori dalla discoteca
+Arrivato fuori dalla discoteca ci sono 0 in attesa fuori e dentro ce ne sono 1
+Il cliente 133720025577024 > Posso entrare dentro (non c'è nessuno)
+Il cliente 133720025577024 arriva dentro la discoteca
+Il cliente 133720025577024 > In cassa non c'è nessuno, vado dalla cassiera
+Il cliente 133720025577024 ha pagato il biglietto
+Il cliente 133720025577024 > Esco dalla disco
+Il cliente 133720025577024 > Me ne vado a ballare
+Il cliente 133720184972864 > Esco dalla disco
+Il cliente 133720184972864 > Me ne vado a ballare
+Il cliente 133720134616640 arriva fuori dalla discoteca
+Arrivato fuori dalla discoteca ci sono 0 in attesa fuori e dentro ce ne sono 0
+Il cliente 133720134616640 > Posso entrare dentro (non c'è nessuno)
+Il cliente 133720134616640 arriva dentro la discoteca
+Il cliente 133720134616640 > In cassa non c'è nessuno, vado dalla cassiera
+Il cliente 133720134616640 ha pagato il biglietto
+Il cliente 133720134616640 > Esco dalla disco
+Il cliente 133720134616640 > Me ne vado a ballare
+Il cliente 133720025577024 arriva fuori dalla discoteca
+Arrivato fuori dalla discoteca ci sono 0 in attesa fuori e dentro ce ne sono 0
+Il cliente 133720025577024 > Posso entrare dentro (non c'è nessuno)
+Il cliente 133720025577024 arriva dentro la discoteca
+Il cliente 133720025577024 > In cassa non c'è nessuno, vado dalla cassiera
+Il cliente 133720025577024 ha pagato il biglietto
+Il cliente 133720025577024 > Esco dalla disco
+Il cliente 133720025577024 > Me ne vado a ballare
+Il cliente 133720184972864 arriva fuori dalla discoteca
+Arrivato fuori dalla discoteca ci sono 0 in attesa fuori e dentro ce ne sono 0
+Il cliente 133720184972864 > Posso entrare dentro (non c'è nessuno)
+Il cliente 133720184972864 arriva dentro la discoteca
+Il cliente 133720184972864 > In cassa non c'è nessuno, vado dalla cassiera
+Il cliente 133720184972864 ha pagato il biglietto
+Il cliente 133720184972864 > Esco dalla disco
+Il cliente 133720184972864 > Me ne vado a ballare
+Il cliente 133720168187456 arriva fuori dalla discoteca
+Arrivato fuori dalla discoteca ci sono 0 in attesa fuori e dentro ce ne sono 0
+Il cliente 133720168187456 > Posso entrare dentro (non c'è nessuno)
+Il cliente 133720168187456 arriva dentro la discoteca
+Il cliente 133720168187456 > In cassa non c'è nessuno, vado dalla cassiera
+Il cliente 133720168187456 ha pagato il biglietto
+Il cliente 133720168187456 > Esco dalla disco
+Il cliente 133720168187456 > Me ne vado a ballare
+Il cliente 133720159794752 arriva fuori dalla discoteca
+Arrivato fuori dalla discoteca ci sono 0 in attesa fuori e dentro ce ne sono 0
+Il cliente 133720159794752 > Posso entrare dentro (non c'è nessuno)
+Il cliente 133720159794752 arriva dentro la discoteca
+Il cliente 133720159794752 > In cassa non c'è nessuno, vado dalla cassiera
+Il cliente 133720159794752 ha pagato il biglietto
+Il cliente 133720159794752 > Esco dalla disco
+Il cliente 133720159794752 > Me ne vado a ballare
+Cassiera > Sono in attesa di un cliente.
+Cassiera > Biglietto emesso e pagato, cliente servito.
+Cassiera > Sono in attesa di un cliente.
+Cassiera > Biglietto emesso e pagato, cliente servito.
+Cassiera > Sono in attesa di un cliente.
+Cassiera > Biglietto emesso e pagato, cliente servito.
+Cassiera > Sono in attesa di un cliente.
+Cassiera > Biglietto emesso e pagato, cliente servito.
+Cassiera > Sono in attesa di un cliente.
+Cassiera > Biglietto emesso e pagato, cliente servito.
+Cassiera > Sono in attesa di un cliente.
+Cassiera > Biglietto emesso e pagato, cliente servito.
+Cassiera > Sono in attesa di un cliente.
+Cassiera > Biglietto emesso e pagato, cliente servito.
+Cassiera > Sono in attesa di un cliente.
+Cassiera > Biglietto emesso e pagato, cliente servito.
+Cassiera > Sono in attesa di un cliente.
+Cassiera > Biglietto emesso e pagato, cliente servito.
+Cassiera > Sono in attesa di un cliente.
+Cassiera > Biglietto emesso e pagato, cliente servito.
+Cassiera > Sono in attesa di un cliente.
+Cassiera > Biglietto emesso e pagato, cliente servito.
+Cassiera > Sono in attesa di un cliente.
+Cassiera > Biglietto emesso e pagato, cliente servito.
+Cassiera > Sono in attesa di un cliente.
+Cassiera > Biglietto emesso e pagato, cliente servito.
+Cassiera > Sono in attesa di un cliente.
+Cassiera > Biglietto emesso e pagato, cliente servito.
+Cassiera > Sono in attesa di un cliente.
+Cassiera > Biglietto emesso e pagato, cliente servito.
+Cassiera > Sono in attesa di un cliente.
+Cassiera > Biglietto emesso e pagato, cliente servito.
+Cassiera > Sono in attesa di un cliente.
+Cassiera > Biglietto emesso e pagato, cliente servito.
+Cassiera > Sono in attesa di un cliente.
+Chiusura!
