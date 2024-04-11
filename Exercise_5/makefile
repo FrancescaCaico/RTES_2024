@@ -1,6 +1,6 @@
 CC=gcc 
 CFLAGS=-Wall  -std=c99
-BIN=mutex_cv_solution
+BIN=mutex
 all: $(BIN)
 %: %.c
 	$(CC) $(CFLAGS) -o $@ $<
