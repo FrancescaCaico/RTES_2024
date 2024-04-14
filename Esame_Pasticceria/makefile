@@ -1,6 +1,6 @@
 CC=gcc 
 CFLAGS=-Wall  -std=c99
-BIN=torte_sem
+BIN=main
 all: $(BIN)
 %: %.c
 	$(CC) $(CFLAGS) -o $@ $<
