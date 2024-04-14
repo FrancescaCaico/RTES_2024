@@ -82,7 +82,7 @@ void commesso_prendo_torta(struct pasticceria_t *p)
 {
     sem_wait(&p->mutex);
     printf("Le torte attualmente pronte sono %d\n", p->torte_pronte);
-
+    p->torte_pronte--;
     if (p->torte_pronte == 0)
     {
         p->bloccato_torte = 1;
@@ -100,17 +100,18 @@ void commesso_prendo_torta(struct pasticceria_t *p)
 void commesso_vendo_torta(struct pasticceria_t *p)
 {
     sem_wait(&p->mutex);
-
+    printf("Posso vendere una torta\n");
     if (p->clienti_attesa)
     {
+        printf("Ci sono clienti in attesa\n");
 
         p->clienti_attesa--;
-        p->torte_pronte--;
         sem_post(&p->commesso);
         sem_post(&p->clienti);
     }
     else
     {
+        printf("Non ci sono clienti in attesa, mi bloccherò aspettando il primo\n");
         p->bloccato_cassa = 1;
     }
     sem_post(&p->mutex);
@@ -121,7 +122,8 @@ void cliente_acquisto(struct pasticceria_t *p)
 {
     sem_wait(&p->mutex);
     printf("Ho preso il mutex\n");
-    if (p->bloccato_cassa && p->clienti_attesa == 0)
+    printf("Ci sono %d persone avanti a me\n", p->clienti_attesa);
+    if (p->bloccato_cassa)
     {
         // sveglio il cassiere
         printf("Sono il primo cliente sveglio il cassiere\n");
@@ -141,7 +143,6 @@ void *cuoco(void *arg)
 {
     while (1)
     {
-
         cuoco_inizio_torta(&pasticceria);
         cuoco_fine_torta(&pasticceria);
     }
