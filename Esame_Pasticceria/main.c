@@ -164,7 +164,6 @@ void *un_cliente(void *arg)
         printf("Cliente %ld > Mi reco in pasticceria...\n", pthread_self());
         cliente_acquisto(&pasticceria);
         printf("Cliente %ld > Vado a casa\n", pthread_self());
-        pausetta();
     }
     return 0;
 }
