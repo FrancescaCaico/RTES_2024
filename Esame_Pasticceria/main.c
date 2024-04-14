@@ -21,8 +21,7 @@ struct pasticceria_t
 {
     sem_t mutex;
     sem_t pasticcere;
-    sem_t commesso_torte;
-    sem_t commesso_clienti;
+    sem_t commesso;
     sem_t clienti;
 
     int b_clienti, torte_pronte, b_comm_cassa, b_comm_torte, b_past;
@@ -33,8 +32,7 @@ void init_pasticceria(struct pasticceria_t *p)
 {
     sem_init(&p->mutex, 0, 1);
     sem_init(&p->pasticcere, 0, 0);
-    sem_init(&p->commesso_torte, 0, 0);
-    sem_init(&p->commesso_clienti, 0, 0);
+    sem_init(&p->commesso, 0, 0);
     sem_init(&p->clienti, 0, 0);
 
     p->b_clienti = p->b_comm_cassa = p->b_comm_torte = p->torte_pronte = p->b_past = 0;
@@ -69,7 +67,7 @@ void cuoco_fine_torta(struct pasticceria_t *p)
     {
         printf("CUOCO --> SVEGLIO IL COMMESSO ORA CHE LE TORTE SONO %d\n", p->torte_pronte);
         p->b_comm_torte = 0;
-        sem_post(&p->commesso_torte);
+        sem_post(&p->commesso);
     }
 
     sem_post(&p->mutex);
@@ -91,10 +89,10 @@ void commesso_prendo_torta(struct pasticceria_t *p)
     {
         printf("COMMESSO --> CI SONO ANCORA %d TORTE\n", p->torte_pronte);
 
-        sem_post(&p->commesso_torte);
+        sem_post(&p->commesso);
     }
     sem_post(&p->mutex);
-    sem_wait(&p->commesso_torte);
+    sem_wait(&p->commesso);
 }
 
 void commesso_vendo_torta(struct pasticceria_t *p)
@@ -104,7 +102,7 @@ void commesso_vendo_torta(struct pasticceria_t *p)
     if (p->b_clienti)
     {
         p->b_clienti--;
-        sem_post(&p->commesso_clienti);
+        sem_post(&p->commesso);
     }
     else
     {
@@ -112,7 +110,7 @@ void commesso_vendo_torta(struct pasticceria_t *p)
         p->b_comm_cassa = 1;
     }
     sem_post(&p->mutex);
-    sem_wait(&p->commesso_clienti);
+    sem_wait(&p->commesso);
     sem_post(&p->clienti);
     printf("COMMESSO --> SERVO UN CLIENTE\n");
 }
@@ -125,7 +123,7 @@ void cliente_acquisto(struct pasticceria_t *p)
         // sono il primo cliente
         printf("CLIENTE 1 (%ld) --> CHIAMO IL COMMESSO\n", pthread_self());
         p->b_comm_cassa = 0;
-        sem_post(&p->commesso_clienti);
+        sem_post(&p->commesso);
         // sem_post(&p->clienti); // io non mi blocco perchè sono il primo.
     }
     else
