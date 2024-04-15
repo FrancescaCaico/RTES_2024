@@ -152,20 +152,19 @@ void *cliente(void *arg)
 {
     // ARRIVA ALL'INGRESSO DELLA DISCO
     printf("Il cliente %ld arriva fuori dalla discoteca\n", pthread_self());
-    pausetta();
     cliente_coda_fuori(&discoteca);
-    pausetta();
 
     printf("Il cliente %ld arriva dentro la discoteca\n", pthread_self());
 
     // VADO A FARE IL BIGLIETTO DALLA CASSIERA
-    pausetta();
     cliente_coda_dentro(&discoteca);
     printf("Il cliente %ld è in cassa e sta pagando il biglietto\n", pthread_self());
 
     // PAGO E RITIRO IL BIGLIETTO
     cliente_esco_coda(&discoteca);
     // A BALLARE
+    printf("Il cliente %ld è in pista!!!\n", pthread_self());
+
     return NULL;
 }
 
@@ -177,7 +176,6 @@ void *cassiera(void *arg)
         // EMISSIONE BIGLIETTO E RISCOSSIONE SINGOLO CLIENTE
         cassiera_cliente_servito(&discoteca);
         // METTO A POSTO I SOLDINI
-        pausetta();
     }
     return NULL;
 }
