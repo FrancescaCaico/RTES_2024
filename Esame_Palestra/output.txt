@@ -1,0 +1,200 @@
+Persona 0: Cerco di usare attrezzo di tipo 2
+Persona 0: Ottengo l'attrezzo di tipo 2
+Persona 0: Uso l'attrezzo di tipo 2
+Persona 0: Prenoto attrezzo di tipo 2
+Persona 0: Restituisco l'attrezzo di tipo 2
+Persona 0: Cerco di usare attrezzo di tipo 1
+Persona 0: Ottengo l'attrezzo di tipo 1
+Persona 0: Uso l'attrezzo di tipo 1
+Persona 0: Prenoto attrezzo di tipo 1
+Persona 0: Restituisco l'attrezzo di tipo 1
+Persona 0: Cerco di usare attrezzo di tipo 0
+Persona 0: Ottengo l'attrezzo di tipo 0
+Persona 0: Uso l'attrezzo di tipo 0
+Persona 0: Prenoto attrezzo di tipo 0
+Persona 0: Restituisco l'attrezzo di tipo 0
+Persona 0: Cerco di usare attrezzo di tipo 2
+Persona 0: Ottengo l'attrezzo di tipo 2
+Persona 0: Uso l'attrezzo di tipo 2
+Persona 0: Non posso prenotare attrezzo di tipo 2, nessuna unità libera
+Persona 0: Restituisco l'attrezzo di tipo 2
+Persona 1: Cerco di usare attrezzo di tipo 5
+Persona 1: Ottengo l'attrezzo di tipo 5
+Persona 1: Uso l'attrezzo di tipo 5
+Persona 1: Prenoto attrezzo di tipo 5
+Persona 1: Restituisco l'attrezzo di tipo 5
+Persona 1: Cerco di usare attrezzo di tipo 0
+Persona 1: Ottengo l'attrezzo di tipo 0
+Persona 1: Uso l'attrezzo di tipo 0
+Persona 1: Non posso prenotare attrezzo di tipo 0, nessuna unità libera
+Persona 1: Restituisco l'attrezzo di tipo 0
+Persona 1: Cerco di usare attrezzo di tipo 0
+Persona 1: Ottengo l'attrezzo di tipo 0
+Persona 1: Uso l'attrezzo di tipo 0
+Persona 1: Non posso prenotare attrezzo di tipo 0, nessuna unità libera
+Persona 1: Restituisco l'attrezzo di tipo 0
+Persona 1: Cerco di usare attrezzo di tipo 2
+Persona 1: Ottengo l'attrezzo di tipo 2
+Persona 1: Uso l'attrezzo di tipo 2
+Persona 1: Non posso prenotare attrezzo di tipo 2, nessuna unità libera
+Persona 1: Restituisco l'attrezzo di tipo 2
+Persona 5: Cerco di usare attrezzo di tipo 0
+Persona 5: Ottengo l'attrezzo di tipo 0
+Persona 5: Uso l'attrezzo di tipo 0
+Persona 5: Non posso prenotare attrezzo di tipo 0, nessuna unità libera
+Persona 5: Restituisco l'attrezzo di tipo 0
+Persona 5: Cerco di usare attrezzo di tipo 3
+Persona 5: Ottengo l'attrezzo di tipo 3
+Persona 5: Uso l'attrezzo di tipo 3
+Persona 5: Prenoto attrezzo di tipo 3
+Persona 5: Restituisco l'attrezzo di tipo 3
+Persona 5: Cerco di usare attrezzo di tipo 1
+Persona 5: Ottengo l'attrezzo di tipo 1
+Persona 5: Uso l'attrezzo di tipo 1
+Persona 5: Non posso prenotare attrezzo di tipo 1, nessuna unità libera
+Persona 5: Restituisco l'attrezzo di tipo 1
+Persona 5: Cerco di usare attrezzo di tipo 3
+Persona 5: Ottengo l'attrezzo di tipo 3
+Persona 5: Uso l'attrezzo di tipo 3
+Persona 5: Non posso prenotare attrezzo di tipo 3, nessuna unità libera
+Persona 5: Restituisco l'attrezzo di tipo 3
+Persona 3: Cerco di usare attrezzo di tipo 4
+Persona 3: Ottengo l'attrezzo di tipo 4
+Persona 3: Uso l'attrezzo di tipo 4
+Persona 3: Prenoto attrezzo di tipo 4
+Persona 3: Restituisco l'attrezzo di tipo 4
+Persona 3: Cerco di usare attrezzo di tipo 2
+Persona 3: Ottengo l'attrezzo di tipo 2
+Persona 3: Uso l'attrezzo di tipo 2
+Persona 3: Non posso prenotare attrezzo di tipo 2, nessuna unità libera
+Persona 3: Restituisco l'attrezzo di tipo 2
+Persona 3: Cerco di usare attrezzo di tipo 5
+Persona 3: Ottengo l'attrezzo di tipo 5
+Persona 3: Uso l'attrezzo di tipo 5
+Persona 3: Non posso prenotare attrezzo di tipo 5, nessuna unità libera
+Persona 3: Restituisco l'attrezzo di tipo 5
+Persona 3: Cerco di usare attrezzo di tipo 3
+Persona 3: Ottengo l'attrezzo di tipo 3
+Persona 3: Uso l'attrezzo di tipo 3
+Persona 3: Non posso prenotare attrezzo di tipo 3, nessuna unità libera
+Persona 3: Restituisco l'attrezzo di tipo 3
+Persona 2: Cerco di usare attrezzo di tipo 4
+Persona 2: Ottengo l'attrezzo di tipo 4
+Persona 2: Uso l'attrezzo di tipo 4
+Persona 2: Non posso prenotare attrezzo di tipo 4, nessuna unità libera
+Persona 2: Restituisco l'attrezzo di tipo 4
+Persona 2: Cerco di usare attrezzo di tipo 2
+Persona 2: Ottengo l'attrezzo di tipo 2
+Persona 2: Uso l'attrezzo di tipo 2
+Persona 2: Non posso prenotare attrezzo di tipo 2, nessuna unità libera
+Persona 2: Restituisco l'attrezzo di tipo 2
+Persona 2: Cerco di usare attrezzo di tipo 4
+Persona 2: Ottengo l'attrezzo di tipo 4
+Persona 2: Uso l'attrezzo di tipo 4
+Persona 2: Non posso prenotare attrezzo di tipo 4, nessuna unità libera
+Persona 2: Restituisco l'attrezzo di tipo 4
+Persona 2: Cerco di usare attrezzo di tipo 2
+Persona 2: Ottengo l'attrezzo di tipo 2
+Persona 2: Uso l'attrezzo di tipo 2
+Persona 2: Non posso prenotare attrezzo di tipo 2, nessuna unità libera
+Persona 2: Restituisco l'attrezzo di tipo 2
+Persona 7: Cerco di usare attrezzo di tipo 2
+Persona 7: Ottengo l'attrezzo di tipo 2
+Persona 7: Uso l'attrezzo di tipo 2
+Persona 7: Non posso prenotare attrezzo di tipo 2, nessuna unità libera
+Persona 7: Restituisco l'attrezzo di tipo 2
+Persona 7: Cerco di usare attrezzo di tipo 0
+Persona 7: Ottengo l'attrezzo di tipo 0
+Persona 7: Uso l'attrezzo di tipo 0
+Persona 7: Non posso prenotare attrezzo di tipo 0, nessuna unità libera
+Persona 7: Restituisco l'attrezzo di tipo 0
+Persona 7: Cerco di usare attrezzo di tipo 0
+Persona 7: Ottengo l'attrezzo di tipo 0
+Persona 7: Uso l'attrezzo di tipo 0
+Persona 7: Non posso prenotare attrezzo di tipo 0, nessuna unità libera
+Persona 7: Restituisco l'attrezzo di tipo 0
+Persona 7: Cerco di usare attrezzo di tipo 0
+Persona 7: Ottengo l'attrezzo di tipo 0
+Persona 7: Uso l'attrezzo di tipo 0
+Persona 7: Non posso prenotare attrezzo di tipo 0, nessuna unità libera
+Persona 7: Restituisco l'attrezzo di tipo 0
+Persona 6: Cerco di usare attrezzo di tipo 0
+Persona 6: Ottengo l'attrezzo di tipo 0
+Persona 6: Uso l'attrezzo di tipo 0
+Persona 6: Non posso prenotare attrezzo di tipo 0, nessuna unità libera
+Persona 6: Restituisco l'attrezzo di tipo 0
+Persona 6: Cerco di usare attrezzo di tipo 2
+Persona 6: Ottengo l'attrezzo di tipo 2
+Persona 6: Uso l'attrezzo di tipo 2
+Persona 6: Non posso prenotare attrezzo di tipo 2, nessuna unità libera
+Persona 6: Restituisco l'attrezzo di tipo 2
+Persona 6: Cerco di usare attrezzo di tipo 5
+Persona 6: Ottengo l'attrezzo di tipo 5
+Persona 6: Uso l'attrezzo di tipo 5
+Persona 6: Non posso prenotare attrezzo di tipo 5, nessuna unità libera
+Persona 6: Restituisco l'attrezzo di tipo 5
+Persona 6: Cerco di usare attrezzo di tipo 4
+Persona 6: Ottengo l'attrezzo di tipo 4
+Persona 6: Uso l'attrezzo di tipo 4
+Persona 6: Non posso prenotare attrezzo di tipo 4, nessuna unità libera
+Persona 6: Restituisco l'attrezzo di tipo 4
+Persona 4: Cerco di usare attrezzo di tipo 4
+Persona 4: Ottengo l'attrezzo di tipo 4
+Persona 4: Uso l'attrezzo di tipo 4
+Persona 4: Non posso prenotare attrezzo di tipo 4, nessuna unità libera
+Persona 4: Restituisco l'attrezzo di tipo 4
+Persona 4: Cerco di usare attrezzo di tipo 4
+Persona 4: Ottengo l'attrezzo di tipo 4
+Persona 4: Uso l'attrezzo di tipo 4
+Persona 4: Non posso prenotare attrezzo di tipo 4, nessuna unità libera
+Persona 4: Restituisco l'attrezzo di tipo 4
+Persona 4: Cerco di usare attrezzo di tipo 4
+Persona 4: Ottengo l'attrezzo di tipo 4
+Persona 4: Uso l'attrezzo di tipo 4
+Persona 4: Non posso prenotare attrezzo di tipo 4, nessuna unità libera
+Persona 4: Restituisco l'attrezzo di tipo 4
+Persona 4: Cerco di usare attrezzo di tipo 0
+Persona 4: Ottengo l'attrezzo di tipo 0
+Persona 4: Uso l'attrezzo di tipo 0
+Persona 4: Non posso prenotare attrezzo di tipo 0, nessuna unità libera
+Persona 4: Restituisco l'attrezzo di tipo 0
+Persona 9: Cerco di usare attrezzo di tipo 2
+Persona 9: Ottengo l'attrezzo di tipo 2
+Persona 9: Uso l'attrezzo di tipo 2
+Persona 9: Non posso prenotare attrezzo di tipo 2, nessuna unità libera
+Persona 9: Restituisco l'attrezzo di tipo 2
+Persona 9: Cerco di usare attrezzo di tipo 0
+Persona 9: Ottengo l'attrezzo di tipo 0
+Persona 9: Uso l'attrezzo di tipo 0
+Persona 9: Non posso prenotare attrezzo di tipo 0, nessuna unità libera
+Persona 9: Restituisco l'attrezzo di tipo 0
+Persona 8: Cerco di usare attrezzo di tipo 4
+Persona 8: Ottengo l'attrezzo di tipo 4
+Persona 8: Uso l'attrezzo di tipo 4
+Persona 8: Non posso prenotare attrezzo di tipo 4, nessuna unità libera
+Persona 8: Restituisco l'attrezzo di tipo 4
+Persona 8: Cerco di usare attrezzo di tipo 5
+Persona 8: Ottengo l'attrezzo di tipo 5
+Persona 8: Uso l'attrezzo di tipo 5
+Persona 8: Non posso prenotare attrezzo di tipo 5, nessuna unità libera
+Persona 8: Restituisco l'attrezzo di tipo 5
+Persona 8: Cerco di usare attrezzo di tipo 5
+Persona 8: Ottengo l'attrezzo di tipo 5
+Persona 8: Uso l'attrezzo di tipo 5
+Persona 8: Non posso prenotare attrezzo di tipo 5, nessuna unità libera
+Persona 8: Restituisco l'attrezzo di tipo 5
+Persona 8: Cerco di usare attrezzo di tipo 0
+Persona 8: Ottengo l'attrezzo di tipo 0
+Persona 8: Uso l'attrezzo di tipo 0
+Persona 8: Non posso prenotare attrezzo di tipo 0, nessuna unità libera
+Persona 8: Restituisco l'attrezzo di tipo 0
+Persona 9: Cerco di usare attrezzo di tipo 0
+Persona 9: Ottengo l'attrezzo di tipo 0
+Persona 9: Uso l'attrezzo di tipo 0
+Persona 9: Non posso prenotare attrezzo di tipo 0, nessuna unità libera
+Persona 9: Restituisco l'attrezzo di tipo 0
+Persona 9: Cerco di usare attrezzo di tipo 5
+Persona 9: Ottengo l'attrezzo di tipo 5
+Persona 9: Uso l'attrezzo di tipo 5
+Persona 9: Non posso prenotare attrezzo di tipo 5, nessuna unità libera
+Persona 9: Restituisco l'attrezzo di tipo 5
