@@ -1,6 +1,6 @@
 CC=gcc 
 CFLAGS=-Wall  -std=c99
-BIN=main
+BIN=torte_mutex
 all: $(BIN)
 %: %.c
 	$(CC) $(CFLAGS) -o $@ $<
