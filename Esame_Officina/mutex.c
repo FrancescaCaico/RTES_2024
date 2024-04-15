@@ -8,15 +8,15 @@
 
 #define N 8
 #define NCLIENTI 32
-int nanosleep(const struct timespec *req, struct timespec *rem);
+// int nanosleep(const struct timespec *req, struct timespec *rem);
 
-void pausetta(void)
-{
-    struct timespec t;
-    t.tv_sec = 0;
-    t.tv_nsec = (rand() % 10 + 1) * 1000000;
-    nanosleep(&t, NULL);
-}
+// void pausetta(void)
+// {
+//     struct timespec t;
+//     t.tv_sec = 0;
+//     t.tv_nsec = (rand() % 10 + 1) * 1000000;
+//     nanosleep(&t, NULL);
+// }
 
 struct officina_t
 {
@@ -135,7 +135,7 @@ void *operaio(void *arg)
         operaio_fineservizio(&o);
         printf("Operaio che si occupa di r --> %d ha finito il servizio\n", r);
 
-        pausetta();
+        // pausetta();
     }
 }
 

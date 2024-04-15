@@ -112,8 +112,7 @@ void *operaio(void *arg)
         operaio_attesacliente(&o, r);
 
         operaio_fineservizio(&o);
-        pausetta();
-    }
+        }
 }
 
 int main()
