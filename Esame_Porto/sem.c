@@ -5,8 +5,6 @@
 #include <semaphore.h>
 #include <time.h>
 
-/* SOLUZIONE SENZA LA PRECEDENZA DI CHI ESCE PERCHE' L'HO DIMENTICATO*/
-
 #define NBARCHE 10
 #define NPOSTI_LIBERI 3
 

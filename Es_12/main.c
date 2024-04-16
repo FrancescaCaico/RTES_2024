@@ -1,3 +1,19 @@
+
+
+#include <stdio.h>
+#include <semaphore.h>
+#include <pthread.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <sys/stat.h>
+#include <stdbool.h>
+#include <stdint.h>
+#include <semaphore.h>
+#include <time.h>
+
+#define NRISORSE 9
+#define NTHREADS 8
+
 /*
 
 Esercizio 12
@@ -22,37 +38,33 @@ void tick () funzione chiamata dal driver dell’orologio in tempo reale ad ogni
 
 */
 
-#include <stdio.h>
-#include <semaphore.h>
-#include <pthread.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <sys/stat.h>
-#include <stdbool.h>
-#include <stdint.h>
-#include <semaphore.h>
-#include <time.h>
+/*
+ - Un processo gestore
+ - N processi
 
-#define NRISORSE 9
-#define NTHREADS 8
-int nanosleep(const struct timespec *req, struct timespec *rem);
+*/
+
+int risorsa_allocata;
 
 struct x_t
 {
+
     sem_t mutex;
-    sem_t threads[NTHREADS];
+    sem_t processi[NTHREADS];
+    sem_t gestore;
+    int risorse_disponibili[NRISORSE];
+    int p_risorse[NTHREADS]; // ogni elemento ci dice se un processo è in attesa di una risorsa. ()
+    int timer[NTHREADS];
 
-    int stato_risorsa[NRISORSE]; // a chi diamo cosa, se è libera o meno
-    int t_waiting_ris[NTHREADS];
-
-    int nb; // quanti sono bloccati nell'attesa di una risorsa.
+    int nrichieste;
 } x;
 
-int checkRisorse(int *stato)
+int primo_richiedente(struct x_t *x)
 {
-    for (int i = 0; i < NRISORSE; ++i)
+
+    for (int i = 0; i < NTHREADS; ++i)
     {
-        if (stato[i] == -1)
+        if (x->p_risorse[i] == -1)
         {
             return i;
         }
@@ -60,26 +72,46 @@ int checkRisorse(int *stato)
     return -1;
 }
 
+int prima_risorsa(struct x_t *x)
+{
+
+    for (int i = 0; i < NRISORSE; ++i)
+    {
+        if (x->risorse_disponibili[i])
+        {
+            return i;
+        }
+    }
+    return -1;
+}
+
+void *alloca_risorsa(struct x_t *x)
+{
+    // il primo di indice + basso
+    sem_wait(&x->mutex);
+    if (x->nrichieste == 0 || x->risorse_disponibili == 0)
+    {
+        // nessuno ha fatto la richiesta per la risorsa oppure non ci sono risorse disponibili
+        sem_post(&x->mutex);
+        sem_wait(&x->gestore);
+    }
+
+    // dobbiamo accontentare il primo che ha richiesto la risorsa e di cui non è scaduto il tempo.
+    int index = primo_richiedente(x);
+    int prima = prima_risorsa(x);
+    if (x->timer[index] && prima != -1)
+    {
+        x->risorse_disponibili[prima] = 0;
+        x->p_risorse[index] = prima;   // al processo N ho assegnato la risorsa n.prima
+        sem_post(&x->processi[index]); // sveglio il processo coinvolto.
+    }
+    sem_post(&x->mutex);
+}
+
+void attesa_risorsa(struct x_t *x, int t, int p)
+{
+}
+
 int richiesta(int t, int p)
 {
-    int ris = 0;
-    struct timespec time;
-    time.tv_nsec = 0;
-    time.tv_sec = t; // proviamo a fare la semtime_wait
-
-    sem_wait(&x.mutex);
-
-    // quando mi blocco quando nessuna risorsa è disponibile per me --> controllo che nessuna sia disponibile
-    if (checkRisorse(x.stato_risorsa) == -1)
-    {
-        // non c'è alcuna risorsa libera per me... faccio la wait per un certo tempo sul mio semaforo attendendo che se ne liberi qualcuna
-        sem_timedwait(&x.threads[p], time.tv_sec);
-    }
-
-    sem_post(&x.mutex);
-
-    if (ris == 0)
-    {
-        // è scaduto il tempo senza allocare la risorsa.
-    }
 }

@@ -1,14 +1,3 @@
-#include <stdio.h>
-#include <semaphore.h>
-#include <pthread.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <sys/stat.h>
-#include <time.h>
-#include <stdbool.h>
-#include <stdint.h>
-#include <semaphore.h>
-#include <time.h>
 /*Una discoteca ha la seguente organizzazione per far entrare i clienti nella sala da ballo.
 Esiste una cassiera che emette UN BIGLIETTO PER VOLTA. Emissione del biglietto e riscossione partono assieme, ma alla fine sono non bloccanti.
 
@@ -21,6 +10,18 @@ Esiste una cassiera che emette UN BIGLIETTO PER VOLTA. Emissione del biglietto e
   dopo di che la porta si richiude di nuovo. Se non ci sono clienti in attesa fuori la porta viene aperta.
 
 Il sistema è modellato tramite un thread per la cassiera, ed uno per ogni cliente. Il numero di clienti non è specificato. Non è importante l'ordine di accodamento dei clienti.*/
+
+#include <stdio.h>
+#include <semaphore.h>
+#include <pthread.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <sys/stat.h>
+#include <time.h>
+#include <stdbool.h>
+#include <stdint.h>
+#include <semaphore.h>
+#include <time.h>
 
 #define NTHREADS 10
 int nanosleep(const struct timespec *req, struct timespec *rem);
@@ -42,7 +43,7 @@ struct discoteca_t
 
     int bfuori, bcassa;
     int ndentro; // assumiamo che in attesa alla cassa possano stare fino alla metà dei thread totali. --> discriminiamo chi aspetta fuori e chi dentro
-
+    int cliente_presente;
 } discoteca;
 
 void init_discoteca(struct discoteca_t *d)
@@ -62,6 +63,7 @@ void init_discoteca(struct discoteca_t *d)
     pthread_condattr_destroy(&condattr);
 
     discoteca.bfuori = discoteca.ndentro = discoteca.bcassa = 0;
+    discoteca.cliente_presente = 0;
 }
 
 void cliente_coda_fuori(struct discoteca_t *d)
@@ -94,6 +96,7 @@ void cliente_coda_dentro(struct discoteca_t *d)
     }
 
     printf("%ld > E' il mio turno alla cassa\n", pthread_self());
+    d->cliente_presente = 1;
     pthread_cond_signal(&d->cassiera);
     pthread_mutex_unlock(&d->mutex);
 }
@@ -120,8 +123,15 @@ void cliente_esco_coda(struct discoteca_t *d)
 void cassiera_attesa_cliente(struct discoteca_t *d)
 {
     printf("Sono la cassiera > attendo un cliente in cassa\n");
+    pthread_mutex_lock(&d->mutex);
     pthread_cond_signal(&d->cassa);
-    pthread_cond_wait(&d->cassiera, &d->mutex);
+    while (d->cliente_presente == 0)
+    {
+        pthread_cond_signal(&d->cassa);
+        pthread_cond_wait(&d->cassiera, &d->mutex);
+    }
+    d->cliente_presente = 0;
+    pthread_mutex_unlock(&d->mutex);
 }
 
 void cassiera_cliente_servito(struct discoteca_t *d)
@@ -153,6 +163,7 @@ void *cassiera(void *arg)
     {
         cassiera_attesa_cliente(&discoteca);
         // EMISSIONE BIGLIETTO E RISCOSSIONE SINGOLO CLIENTE
+
         cassiera_cliente_servito(&discoteca);
         // METTO A POSTO I SOLDINI
     }
