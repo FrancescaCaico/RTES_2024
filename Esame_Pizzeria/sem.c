@@ -146,7 +146,7 @@ void *cliente(void *arg)
             printf("Cliente %d > Attendo il mio ordine\n", cliente);
             ritira_pizze(&coda, cliente);
             printf("Cliente %d > Ritirato!\n", cliente);
-            pausetta();
+            // pausetta();
         }
     }
 }
@@ -159,7 +159,7 @@ void *pizzaiolo(void *arg)
         prossima_pizza(&coda);
 
         consegna_pizza(&coda);
-        pausetta();
+        //  pausetta();
     }
 }
 int main()
