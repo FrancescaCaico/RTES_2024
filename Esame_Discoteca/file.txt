@@ -1,0 +1,64 @@
+Sono la cassiera > attendo un cliente in cassa
+Il cliente 131321558971968 arriva fuori dalla discoteca
+131321558971968 > Sono entrato dentro
+Il cliente 131321558971968 arriva dentro la discoteca
+131321558971968 > E' il mio turno alla cassa
+Cassiera > Biglietto emesso e pagato, cliente servito.
+Sono la cassiera > attendo un cliente in cassa
+Il cliente 131321558971968 è in cassa e sta pagando il biglietto
+Il cliente 131321443644992 arriva fuori dalla discoteca
+131321443644992 > Sono entrato dentro
+Il cliente 131321443644992 arriva dentro la discoteca
+131321443644992 > E' il mio turno alla cassa
+Cassiera > Biglietto emesso e pagato, cliente servito.
+Sono la cassiera > attendo un cliente in cassa
+Il cliente 131321443644992 è in cassa e sta pagando il biglietto
+Il cliente 131321575757376 arriva fuori dalla discoteca
+131321575757376 > Sono entrato dentro
+Il cliente 131321575757376 arriva dentro la discoteca
+131321575757376 > E' il mio turno alla cassa
+Il cliente 131321575757376 è in cassa e sta pagando il biglietto
+Il cliente 131321584150080 arriva fuori dalla discoteca
+131321584150080 > Sono entrato dentro
+Il cliente 131321584150080 arriva dentro la discoteca
+131321584150080 > E' il mio turno alla cassa
+Il cliente 131321584150080 è in cassa e sta pagando il biglietto
+Il cliente 131321443644992 arriva fuori dalla discoteca
+131321443644992 > Sono entrato dentro
+Il cliente 131321443644992 arriva dentro la discoteca
+131321443644992 > E' il mio turno alla cassa
+Il cliente 131321443644992 è in cassa e sta pagando il biglietto
+Il cliente 131321558971968 arriva fuori dalla discoteca
+131321558971968 > Sono entrato dentro
+Il cliente 131321558971968 arriva dentro la discoteca
+131321558971968 > E' il mio turno alla cassa
+Il cliente 131321558971968 è in cassa e sta pagando il biglietto
+Il cliente 131321542186560 arriva fuori dalla discoteca
+131321542186560 > Sono entrato dentro
+Il cliente 131321542186560 arriva dentro la discoteca
+131321542186560 > E' il mio turno alla cassa
+Il cliente 131321542186560 è in cassa e sta pagando il biglietto
+Cassiera > Biglietto emesso e pagato, cliente servito.
+Sono la cassiera > attendo un cliente in cassa
+Il cliente 131321533793856 arriva fuori dalla discoteca
+131321533793856 > Sono entrato dentro
+Il cliente 131321533793856 arriva dentro la discoteca
+131321533793856 > E' il mio turno alla cassa
+Il cliente 131321533793856 è in cassa e sta pagando il biglietto
+Cassiera > Biglietto emesso e pagato, cliente servito.
+Sono la cassiera > attendo un cliente in cassa
+Il cliente 131321567364672 arriva fuori dalla discoteca
+131321567364672 > Sono entrato dentro
+Il cliente 131321567364672 arriva dentro la discoteca
+131321567364672 > E' il mio turno alla cassa
+Il cliente 131321567364672 è in cassa e sta pagando il biglietto
+Cassiera > Biglietto emesso e pagato, cliente servito.
+Sono la cassiera > attendo un cliente in cassa
+Il cliente 131321550579264 arriva fuori dalla discoteca
+131321550579264 > Sono entrato dentro
+Il cliente 131321550579264 arriva dentro la discoteca
+131321550579264 > E' il mio turno alla cassa
+Il cliente 131321550579264 è in cassa e sta pagando il biglietto
+Cassiera > Biglietto emesso e pagato, cliente servito.
+Sono la cassiera > attendo un cliente in cassa
+Chiusura!
