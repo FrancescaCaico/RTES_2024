@@ -1,0 +1,22 @@
+
+{
+    "scenario_schema": {
+        "N": {"pattern": "**.N", "type": "real"}
+    },
+    "metrics": {
+        "ResponseTimeMean": {"module": "**.sink", "scalar_name": "lifeTime:mean", "aggr": ["none"]}       
+    },
+    "analyses": {
+        "SigmaSens": {
+            "outfile": "results/exam.data",
+            "scenarios": {
+                "fixed": {},
+                "range": ["N"]
+            },
+            "metrics": [
+                {"metric": "ResponseTimeMean", "aggr":  "none"}
+
+            ]
+        }
+    }
+}
